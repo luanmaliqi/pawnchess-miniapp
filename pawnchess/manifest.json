@@ -1,0 +1,38 @@
+{
+  "name": "Pawn Chess",
+  "description": "Try to outmaneuver your opponent using only pawns. Reach the back rank or capture all enemy pawns.",
+  "icon": "assets/pawnchess.svg",
+  "init": "setPawnScenario('pawnchess-list')",
+  "id": "pawnchess",
+  "cssFile": "resources/pawnchess.css",
+  "scripts": [
+    "src/pawnchess.js",
+    "src/pawnchess_ui.js"
+  ],
+  "htmlFile": "resources/pawnchess.html",
+  "scenario": {
+    "pawnchess-list": {
+      "menu": {
+        "Settings": "menu_settings",
+        "About": "menu_about"
+      },
+      "display": [
+        "div:back",
+        "core",
+        "div:pawnchess-list",
+        "plus"
+      ]
+    },
+    "pawnchess-board": {
+      "menu": {
+        "Settings": "menu_settings",
+        "About": "menu_about"
+      },
+      "display": [
+        "div:back",
+        "core",
+        "div:pawnchess-board"
+      ]
+    }
+  }
+}

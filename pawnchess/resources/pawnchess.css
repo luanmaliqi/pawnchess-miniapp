@@ -1,0 +1,79 @@
+/* colors and size */
+:root {
+  --square-size: 11.5vw;
+  --light: #f0d9b5;
+  --dark: #b58863;
+}
+
+/* game list */
+.pawnchess_list_button {
+  border: none;
+  text-align: left;
+  vertical-align: top;
+  height: 3em;
+  font-size: medium;
+  border-radius: 4pt;
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
+  margin: 4pt;
+  background-color: #f0f0f0;
+}
+
+/* pawn chess table */
+.pawnchess_table {
+  display: grid;
+  grid-template-columns: repeat(8, var(--square-size));
+  grid-template-rows: repeat(8, var(--square-size));
+  justify-content: center;
+  gap: 2px;
+  margin: 0 auto;
+  padding: 4pt;
+  border: 4px solid #333;
+  border-radius: 12pt;
+  background-color: #333;
+  width: fit-content;
+}
+
+/* cells */
+.pawnchess_cell {
+  width: var(--square-size);
+  height: var(--square-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  user-select: none;
+  position: relative;
+  border-radius: 4pt;
+}
+
+.pawnchess_cell.light {
+  background-color: var(--light);
+}
+.pawnchess_cell.dark {
+  background-color: var(--dark);
+}
+
+/* coordinates: a–h */
+.pawnchess_cell[data-row='7']::after {
+  content: attr(data-colLetter);
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  font-size: 0.65rem;
+  color: #444;
+}
+
+/* coordinates: 8–1 */
+.pawnchess_cell[data-col='0']::before {
+  content: attr(data-rowNumber);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  font-size: 0.65rem;
+  color: #444;
+}
+
+/* selected cell marking */
+.pawnchess_cell.selected {
+  outline: 3px solid yellow;
+}
